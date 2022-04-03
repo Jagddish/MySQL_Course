@@ -45,3 +45,21 @@ SELECT DISTINCT CONCAT(author_fname, ' ',author_lname) FROM books;
   -- list latest released top 5 books
   SELECT * FROM books ORDER BY released_year DESC LIMIT 5;
   
+  
+  
+  -- Searching with LIKE 
+  SELECT author_fname from books WHERE author_fname LIKE '%da%';
+  
+  -- I want names that start with da
+  SELECT author_fname FROM books WHERE author_fname LIKE 'da%';
+  
+  -- I want name that ends with da
+    SELECT author_fname FROM books WHERE author_fname LIKE '%da';
+
+-- using LIKE '____'; 4 underscores 
+
+SELECT author_fname ,stock_quantity from books where author_fname LIKE '__';
+
+-- Using wildcard symbols for searching ??
+-- to use wildcard sybols for searching we hv to use \ backslash
+SELECT title from books WHERE title LIKE '%\%%';
